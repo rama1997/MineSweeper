@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "mainMenu.h"
 #include "game.h"
 #include "Minesweeper.h"

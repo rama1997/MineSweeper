@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "game.h"
 #include "mainMenu.h"
 #include "Minesweeper.h"
@@ -17,6 +18,11 @@ void Game::Start()
     _mainWindow.create(sf::VideoMode(windowWidth,windowHeight,32),"Minesweeper!",sf::Style::Close); //create game window on game start
 
     _gameState = Game::ShowingTitle;   //first state is to show title
+
+    sf::Music music;
+    music.openFromFile("audio/weCanGetHigh.ogg");
+    music.setLoop(true);
+    music.play();
 
     while(!IsExiting())
     {
