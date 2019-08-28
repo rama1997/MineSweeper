@@ -163,7 +163,7 @@ int main()
     Game::Start();
 
     srand(time(0)); //RNG
-    sf::RenderWindow window(sf::VideoMode(Game::windowWidth, Game::windowHeight), "Minesweeper!", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(Game::windowWidth, Game::windowHeight), "Minesweeper!", sf::Style::Close);
 
     sf::Font font;      //font and text stuff
     font.loadFromFile("fonts/OpenSans-Regular.ttf");
@@ -176,10 +176,11 @@ int main()
 
     sf::Text timer;     //timer text box
     timer.setFont(font);
-    timer.setString("");
+    timer.setString("0");
     timer.setCharacterSize(32);
     timer.setFillColor(sf::Color::White);
     timer.setPosition(35, 900);
+    bool newTime = false;
 
     sf::Clock clock;
 
@@ -212,6 +213,9 @@ int main()
 
     setUpBlankBoard(gameGrid,imageGrid,visited);    //set up blank board at the start of program
 
+    bool gameLost = false;
+    bool gameWon = false;
+
     while (window.isOpen())
     {
         sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
@@ -219,16 +223,12 @@ int main()
         int mouseY = mousePosition.y/imageSize;
         int clickedMX;
         int clickedMY;
-        bool gameLost = false;
-        bool gameWon = false;
-        bool showTime = false;
 
         sf::Event event;
         while (window.pollEvent(event)){
             if (event.type == sf::Event::Closed){
                 window.close();
             }
-
             if(event.type == sf::Event::MouseButtonPressed){
                 if (event.key.code == sf::Mouse::Left){  // on left mouse click, change visual grid to match game grid, "uncover" the square
                     if(mouseX <= gameWidth && mouseY <= gameHeight) { //map does not uncover unless user clicks within map screen
@@ -237,7 +237,6 @@ int main()
                         clickedMY = mouseY;
                         if (firstClick == true) { //board is built AFTER first click so that first click is never a bomb and always 0
                             clock.restart();
-                            showTime = true;
                             setUpGameGrid(gameGrid, clickedMX, clickedMY);
                             firstClick = false;
                         }
@@ -246,24 +245,25 @@ int main()
                             checkZero(gameGrid, imageGrid, visited, clickedMX, clickedMY);
                         }
                         gameWon = true;
-                        showTime = true;
+                        newTime = true;
                         for (int i=1; i<=gameWidth; i++) {  //check if game is won
                             for (int j = 1; j <= gameHeight; j++) {
                                 if(gameGrid[i][j] != 9 && imageGrid[i][j] != gameGrid[i][j]){
                                     gameWon = false;
-                                    showTime = false;
                                 }
                             }
                         }
                     }
                     else if(mouseX*imageSize >= playButtonPosition.x && mouseY*imageSize >= playButtonPosition.y && mouseX*imageSize <= playButtonPosition.x + playButtonBounds.width && mouseY*imageSize <= playButtonPosition.y + playButtonBounds.height){
+                        //if reset button is clicked
                         setUpBlankBoard(gameGrid,imageGrid,visited);
                         text.setString("");
                         gameLost = false;
                         gameWon = false;
                         firstClick = true;
-                        showTime = false;
+                        newTime = false;
                         clock.restart();
+                        timer.setString("0");
                     }
                 }
                 else if (event.key.code == sf::Mouse::Right){ //on right mouse click, insert flag
@@ -287,7 +287,7 @@ int main()
                     imageGrid[i][j] = gameGrid[i][j];
                     text.setString("Game Over You Lose");
                     gameWon = false;
-                    showTime = false;
+                    newTime = false;
                 }
                 sprite.setTextureRect(sf::IntRect(imageGrid[i][j] * imageSize, 0, imageSize, imageSize));
                 sprite.setPosition(i * imageSize, j * imageSize);
@@ -296,11 +296,9 @@ int main()
         }
         if(gameWon == true){
             text.setString("Congratz You Win");
-            gameLost = false;
-            showTime = false;
+            newTime = false;
         }
-        if(showTime == true){
-            // TODO: add/fix timer
+        if(newTime == true){
             sf::Time elapsed1 = clock.getElapsedTime();
             timer.setString(std::to_string((int)round(elapsed1.asSeconds())));
         }

@@ -12,7 +12,7 @@ void Game::Start()
     if(_gameState != Uninitialized)
         return;
 
-    _mainWindow.create(sf::VideoMode(windowWidth,windowHeight,32),"Minesweeper!",sf::Style::Default);
+    _mainWindow.create(sf::VideoMode(windowWidth,windowHeight,32),"Minesweeper!",sf::Style::Close);
 
     _gameState = Game::ShowingTitle;
 

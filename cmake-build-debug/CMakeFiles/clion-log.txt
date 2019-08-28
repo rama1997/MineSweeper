@@ -1,5 +1,5 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ray/CLionProjects/MineSweeper
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ray/CLionProjects/Minesweeper
 -- Found SFML 2.5.1 in /usr/local/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/ray/CLionProjects/MineSweeper/cmake-build-debug
+-- Build files have been written to: /Users/ray/CLionProjects/Minesweeper/cmake-build-debug

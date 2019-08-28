@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug"/>
+				<Option working_dir="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug"/>
+				<Option working_dir="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug"/>
+				<Option working_dir="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Minesweeper">
-				<Option output="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Minesweeper" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug"/>
+				<Option output="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Minesweeper" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -52,15 +52,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 Minesweeper"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 Minesweeper"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Minesweeper/fast">
-				<Option output="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Minesweeper" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ray/CLionProjects/MineSweeper/cmake-build-debug"/>
+				<Option output="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Minesweeper" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ray/CLionProjects/Minesweeper/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -73,44 +73,44 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 Minesweeper/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 Minesweeper/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/game.cpp">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/game.cpp">
 			<Option target="Minesweeper"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/game.h">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/game.h">
 			<Option target="Minesweeper"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/main.cpp">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/main.cpp">
 			<Option target="Minesweeper"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/mainMenu.cpp">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/mainMenu.cpp">
 			<Option target="Minesweeper"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/mainMenu.h">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/mainMenu.h">
 			<Option target="Minesweeper"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/CMakeLists.txt">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/../../../../usr/local/lib/cmake/SFML/SFMLConfig.cmake">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/../../../../usr/local/lib/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/../../../../usr/local/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/../../../../usr/local/lib/cmake/SFML/SFMLConfigDependencies.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/../../../../usr/local/lib/cmake/SFML/SFMLConfigVersion.cmake">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/../../../../usr/local/lib/cmake/SFML/SFMLConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/../../../../usr/local/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/../../../../usr/local/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ray/CLionProjects/MineSweeper/../../../../usr/local/lib/cmake/SFML/SFMLSharedTargets.cmake">
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/../../../../usr/local/lib/cmake/SFML/SFMLSharedTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
 	</Project>

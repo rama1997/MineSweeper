@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/ray/CLionProjects/MineSweeper/game.cpp" "/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/CMakeFiles/Minesweeper.dir/game.cpp.o"
-  "/Users/ray/CLionProjects/MineSweeper/main.cpp" "/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/CMakeFiles/Minesweeper.dir/main.cpp.o"
-  "/Users/ray/CLionProjects/MineSweeper/mainMenu.cpp" "/Users/ray/CLionProjects/MineSweeper/cmake-build-debug/CMakeFiles/Minesweeper.dir/mainMenu.cpp.o"
+  "/Users/ray/CLionProjects/Minesweeper/game.cpp" "/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/CMakeFiles/Minesweeper.dir/game.cpp.o"
+  "/Users/ray/CLionProjects/Minesweeper/main.cpp" "/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/CMakeFiles/Minesweeper.dir/main.cpp.o"
+  "/Users/ray/CLionProjects/Minesweeper/mainMenu.cpp" "/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/CMakeFiles/Minesweeper.dir/mainMenu.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

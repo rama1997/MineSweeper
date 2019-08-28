@@ -6,19 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/ray/CLionProjects/MineSweeper/game.cpp
-SFML/Graphics.hpp
--
-game.h
-/Users/ray/CLionProjects/MineSweeper/game.h
-mainMenu.h
-/Users/ray/CLionProjects/MineSweeper/mainMenu.h
-
-/Users/ray/CLionProjects/MineSweeper/game.h
+/Users/ray/CLionProjects/Minesweeper/game.h
 SFML/Graphics.hpp
 -
 
-/Users/ray/CLionProjects/MineSweeper/main.cpp
+/Users/ray/CLionProjects/Minesweeper/main.cpp
 SFML/Graphics.hpp
 -
 iostream
@@ -34,19 +26,7 @@ vector
 cmath
 -
 game.h
-/Users/ray/CLionProjects/MineSweeper/game.h
-
-/Users/ray/CLionProjects/MineSweeper/mainMenu.cpp
-SFML/Graphics.hpp
--
-mainMenu.h
-/Users/ray/CLionProjects/MineSweeper/mainMenu.h
-
-/Users/ray/CLionProjects/MineSweeper/mainMenu.h
-SFML/Graphics.hpp
--
-list
--
+/Users/ray/CLionProjects/Minesweeper/game.h
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h
