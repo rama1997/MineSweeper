@@ -1,5 +1,8 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "mainMenu.h"
+#include "game.h"
+#include "Minesweeper.h"
 
 MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window)
 {
@@ -13,18 +16,18 @@ MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window)
 
     //Play menu item coordinates
     MenuItem playButton;
-    playButton.rect.top= 145;
-    playButton.rect.height = 380 - playButton.rect.top;
+    playButton.rect.top= 200;
+    playButton.rect.height = (Game::windowHeight/2) - playButton.rect.top;
     playButton.rect.left = 0;
-    playButton.rect.width = 1023 - playButton.rect.left;
+    playButton.rect.width = Game::windowWidth;
     playButton.action = Play;
 
     //Exit menu item coordinates
     MenuItem exitButton;
+    exitButton.rect.top = 500;
+    exitButton.rect.height = exitButton.rect.top - 250;
     exitButton.rect.left = 0;
-    exitButton.rect.width = 1023 - exitButton.rect.left;
-    exitButton.rect.top = 383;
-    exitButton.rect.height = 560 - exitButton.rect.top;
+    exitButton.rect.width = Game::windowWidth;
     exitButton.action = Exit;
 
     _menuItems.push_back(playButton);
@@ -33,45 +36,40 @@ MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window)
     window.draw(sprite);
     window.display();
 
-    //return GetMenuResponse(window);
+    return GetMenuResponse(window);
 }
 
-//MainMenu::MenuResult MainMenu::HandleClick(int x, int y)
-//{
-//    std::list<MenuItem>::iterator it;
-//
-//    for ( it = _menuItems.begin(); it != _menuItems.end(); it++)
-//    {
-//        sf::Rect<int> menuItemRect = (*it).rect;
-//        if( menuItemRect.Bottom > y
-//            && menuItemRect.Top < y
-//            && menuItemRect.Left < x
-//            && menuItemRect.Right > x)
-//        {
-//            return (*it).action;
-//        }
-//    }
-//
-//    return Nothing;
-//}
-//
-//MainMenu::MenuResult  MainMenu::GetMenuResponse(sf::RenderWindow& window)
-//{
-//    sf::Event menuEvent;
-//
-//    while(42 != 43)
-//    {
-//
-//        while(window.GetEvent(menuEvent))
-//        {
-//            if(menuEvent.Type == sf::Event::MouseButtonPressed)
-//            {
-//                return HandleClick(menuEvent.MouseButton.X,menuEvent.MouseButton.Y);
-//            }
-//            if(menuEvent.Type == sf::Event::Closed)
-//            {
-//                return Exit;
-//            }
-//        }
-//    }
-//}
+MainMenu::MenuResult  MainMenu::GetMenuResponse(sf::RenderWindow& window)
+{
+    sf::Event event;
+    while(window.pollEvent(event))
+    {
+        if(event.type == sf::Event::MouseButtonPressed)
+        {
+            return HandleClick(event.mouseButton.x,event.mouseButton.y);
+        }
+        if(event.type == sf::Event::Closed)
+        {
+            return Exit;
+        }
+    }
+}
+
+MainMenu::MenuResult MainMenu::HandleClick(int x, int y)
+{
+    std::list<MenuItem>::iterator it;
+
+    for ( it = _menuItems.begin(); it != _menuItems.end(); it++)
+    {
+        sf::Rect<int> menuItemRect = (*it).rect;
+        if( menuItemRect.top + menuItemRect.height >= y
+            && menuItemRect.top <= y
+            && menuItemRect.left <= x
+            && menuItemRect.left + menuItemRect.width >= x)
+        {
+            return (*it).action;
+        }
+    }
+
+    return Nothing;
+}

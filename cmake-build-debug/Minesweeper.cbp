@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/Minesweeper.cpp">
+			<Option target="Minesweeper"/>
+		</Unit>
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/Minesweeper.h">
+			<Option target="Minesweeper"/>
+		</Unit>
 		<Unit filename="/Users/ray/CLionProjects/Minesweeper/game.cpp">
 			<Option target="Minesweeper"/>
 		</Unit>

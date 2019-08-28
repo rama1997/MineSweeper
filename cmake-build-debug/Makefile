@@ -123,6 +123,33 @@ Minesweeper/fast:
 	$(MAKE) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/build
 .PHONY : Minesweeper/fast
 
+Minesweeper.o: Minesweeper.cpp.o
+
+.PHONY : Minesweeper.o
+
+# target to build an object file
+Minesweeper.cpp.o:
+	$(MAKE) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/Minesweeper.cpp.o
+.PHONY : Minesweeper.cpp.o
+
+Minesweeper.i: Minesweeper.cpp.i
+
+.PHONY : Minesweeper.i
+
+# target to preprocess a source file
+Minesweeper.cpp.i:
+	$(MAKE) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/Minesweeper.cpp.i
+.PHONY : Minesweeper.cpp.i
+
+Minesweeper.s: Minesweeper.cpp.s
+
+.PHONY : Minesweeper.s
+
+# target to generate assembly for a file
+Minesweeper.cpp.s:
+	$(MAKE) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/Minesweeper.cpp.s
+.PHONY : Minesweeper.cpp.s
+
 game.o: game.cpp.o
 
 .PHONY : game.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Minesweeper"
+	@echo "... Minesweeper.o"
+	@echo "... Minesweeper.i"
+	@echo "... Minesweeper.s"
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"

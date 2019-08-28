@@ -1,9 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include "game.h"
 #include "mainMenu.h"
+#include "Minesweeper.h"
 
 int Game::windowWidth = 700;
 int Game::windowHeight = 1000;
+int Game::imageSize = 32; //image for minesweeper content is 32 by 32 pixel image
 Game::GameState Game::_gameState = Uninitialized;
 sf::RenderWindow Game::_mainWindow;
 
@@ -12,9 +14,9 @@ void Game::Start()
     if(_gameState != Uninitialized)
         return;
 
-    _mainWindow.create(sf::VideoMode(windowWidth,windowHeight,32),"Minesweeper!",sf::Style::Close);
+    _mainWindow.create(sf::VideoMode(windowWidth,windowHeight,32),"Minesweeper!",sf::Style::Close); //create game window on game start
 
-    _gameState = Game::ShowingTitle;
+    _gameState = Game::ShowingTitle;   //first state is to show title
 
     while(!IsExiting())
     {
@@ -40,7 +42,7 @@ void Game::GameLoop()
 
         switch(_gameState)
         {
-            case Game::ShowingTitle:
+            case Game::ShowingTitle: //show title screen, upon click will move to main menu screen
             {
                 ShowTitleScreen();
                 if(event.type == sf::Event::Closed || event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed )
@@ -51,21 +53,33 @@ void Game::GameLoop()
             }
             case Game::ShowingMenu:
             {
-                ShowMainMenu();
-                if(event.type == sf::Event::Closed || event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed )
+                MainMenu mainMenu;
+                MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
+                switch(result)
                 {
-                    _gameState = Game::Playing;
+                    case MainMenu::Exit: {
+                        _gameState = Game::Exiting;
+                        break;
+                    }
+                    case MainMenu::Play: {
+                        _gameState = Game::Playing;
+                        break;
+                    }
+                    case MainMenu::Nothing:{
+                        break;
+                    }
                 }
                 break;
             }
             case Game::Playing:
             {
-                _mainWindow.clear(sf::Color(255,0,0));
-                _mainWindow.display();
-                if(event.type == sf::Event::Closed || event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed )
+                if(event.type == sf::Event::Closed)
                 {
                     _gameState = Game::Exiting;
                 }
+                Minesweeper game;
+                game.play(_mainWindow);
+                _gameState = Game::Exiting;
                 break;
             }
         }
@@ -78,9 +92,4 @@ void Game::ShowTitleScreen() {
     sf::Sprite titleScreen(titleImage);
     _mainWindow.draw(titleScreen);
     _mainWindow.display();
-}
-
-void Game::ShowMainMenu() {
-    MainMenu mainMenu;
-    mainMenu.Show(_mainWindow);
 }

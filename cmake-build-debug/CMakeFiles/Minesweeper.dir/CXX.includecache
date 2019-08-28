@@ -6,27 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/Users/ray/CLionProjects/Minesweeper/Minesweeper.h
+SFML/Graphics.hpp
+-
+
+/Users/ray/CLionProjects/Minesweeper/game.cpp
+SFML/Graphics.hpp
+-
+game.h
+/Users/ray/CLionProjects/Minesweeper/game.h
+mainMenu.h
+/Users/ray/CLionProjects/Minesweeper/mainMenu.h
+Minesweeper.h
+/Users/ray/CLionProjects/Minesweeper/Minesweeper.h
+
 /Users/ray/CLionProjects/Minesweeper/game.h
 SFML/Graphics.hpp
 -
 
-/Users/ray/CLionProjects/Minesweeper/main.cpp
+/Users/ray/CLionProjects/Minesweeper/mainMenu.h
 SFML/Graphics.hpp
 -
-iostream
+list
 -
-time.h
--
-queue
--
-utility
--
-vector
--
-cmath
--
-game.h
-/Users/ray/CLionProjects/Minesweeper/game.h
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h

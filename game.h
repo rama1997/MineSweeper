@@ -11,15 +11,14 @@ public:
     //TODO: make windowWidth/ windowHeight private
     static int windowWidth;
     static int windowHeight;
+    static int imageSize; //size for minesweeper squares
 
 private:
     static bool IsExiting();
     static void GameLoop();
     static void ShowTitleScreen();
-    static void ShowMainMenu();
 
-    enum GameState { Uninitialized, ShowingTitle, Paused,
-        ShowingMenu, Playing, Exiting };
+    enum GameState { Uninitialized, ShowingTitle, ShowingMenu, Playing, Exiting};
 
     static GameState _gameState;
     static sf::RenderWindow _mainWindow;
