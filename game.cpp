@@ -85,7 +85,9 @@ void Game::GameLoop()
                 }
                 Minesweeper game;
                 game.play(_mainWindow);
-                _gameState = Game::Exiting;
+                if(_gameState == Game::Playing){
+                    _gameState == Game::Exiting;
+                }
                 break;
             }
         }

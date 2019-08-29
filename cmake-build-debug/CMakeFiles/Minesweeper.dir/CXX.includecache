@@ -10,21 +10,23 @@
 SFML/Graphics.hpp
 -
 
-/Users/ray/CLionProjects/Minesweeper/game.cpp
+/Users/ray/CLionProjects/Minesweeper/game.h
+SFML/Graphics.hpp
+-
+
+/Users/ray/CLionProjects/Minesweeper/mainMenu.cpp
+iostream
+-
 SFML/Graphics.hpp
 -
 SFML/Audio.hpp
 -
-game.h
-/Users/ray/CLionProjects/Minesweeper/game.h
 mainMenu.h
 /Users/ray/CLionProjects/Minesweeper/mainMenu.h
+game.h
+/Users/ray/CLionProjects/Minesweeper/game.h
 Minesweeper.h
 /Users/ray/CLionProjects/Minesweeper/Minesweeper.h
-
-/Users/ray/CLionProjects/Minesweeper/game.h
-SFML/Graphics.hpp
--
 
 /Users/ray/CLionProjects/Minesweeper/mainMenu.h
 SFML/Graphics.hpp

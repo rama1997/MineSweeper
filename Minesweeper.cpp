@@ -159,7 +159,6 @@ void Minesweeper::checkZero(std::vector<std::vector<int>> &gameGrid,std::vector<
 void Minesweeper::play(sf::RenderWindow& window){
 
     srand(time(0)); //RNG
-    //sf::RenderWindow window(sf::VideoMode(Game::windowWidth, Game::windowHeight), "Minesweeper!", sf::Style::Close);
 
     sf::Font font;      //font and text stuff
     font.loadFromFile("fonts/OpenSans-Regular.ttf");
@@ -273,6 +272,12 @@ void Minesweeper::play(sf::RenderWindow& window){
                 }
                 if(imageGrid[mouseX][mouseY] == 9){ //if user clicks on a bomb, game ends
                     gameLost = true;
+                }
+            }
+            if(event.type == sf::Event::KeyPressed){
+                if(event.key.code == sf::Keyboard::Escape){
+                    Game::_gameState = Game::ShowingMenu;
+                    return;
                 }
             }
         }

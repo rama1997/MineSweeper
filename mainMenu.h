@@ -13,7 +13,7 @@ public:
     struct MenuItem
     {
     public:
-        sf::Rect<int> rect;
+        sf::RectangleShape rect;
         MenuResult action;
     };
 

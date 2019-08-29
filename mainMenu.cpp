@@ -17,24 +17,30 @@ MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window)
 
     //Play menu item coordinates
     MenuItem playButton;
-    playButton.rect.top= 200;
-    playButton.rect.height = (Game::windowHeight/2) - playButton.rect.top;
-    playButton.rect.left = 0;
-    playButton.rect.width = Game::windowWidth;
     playButton.action = Play;
+    sf::RectangleShape test(sf::Vector2f(1000, 300));
+    test.setFillColor(sf::Color::Transparent);
+//    test.setOutlineColor(sf::Color::Red);
+    test.setOutlineThickness(5);
+    test.setPosition(0,190);
+    playButton.rect = test;
 
     //Exit menu item coordinates
     MenuItem exitButton;
-    exitButton.rect.top = 500;
-    exitButton.rect.height = exitButton.rect.top - 250;
-    exitButton.rect.left = 0;
-    exitButton.rect.width = Game::windowWidth;
     exitButton.action = Exit;
+    sf::RectangleShape test2(sf::Vector2f(1000, 230));
+    test2.setFillColor(sf::Color::Transparent);
+//    test2.setOutlineColor(sf::Color::Blue);
+    test2.setOutlineThickness(5);
+    test2.setPosition(0,500);
+    exitButton.rect = test2;
 
     _menuItems.push_back(playButton);
     _menuItems.push_back(exitButton);
 
     window.draw(sprite);
+    window.draw(test);
+    window.draw(test2);
     window.display();
 
     return GetMenuResponse(window);
@@ -62,11 +68,10 @@ MainMenu::MenuResult MainMenu::HandleClick(int x, int y)
 
     for ( it = _menuItems.begin(); it != _menuItems.end(); it++)
     {
-        sf::Rect<int> menuItemRect = (*it).rect;
-        if( menuItemRect.top + menuItemRect.height >= y
-            && menuItemRect.top <= y
-            && menuItemRect.left <= x
-            && menuItemRect.left + menuItemRect.width >= x)
+        sf::RectangleShape menuItemRect = (*it).rect;
+        sf::FloatRect MIRB(menuItemRect.getLocalBounds());
+        sf::Vector2f MIRP = menuItemRect.getPosition();
+        if( x > MIRP.x && x< MIRP.x + MIRB.width && y > MIRP.y && y< MIRP.y + MIRB.height)
         {
             return (*it).action;
         }
