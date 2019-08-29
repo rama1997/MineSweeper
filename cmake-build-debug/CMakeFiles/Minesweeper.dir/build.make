@@ -124,10 +124,10 @@ Minesweeper: CMakeFiles/Minesweeper.dir/game.cpp.o
 Minesweeper: CMakeFiles/Minesweeper.dir/mainMenu.cpp.o
 Minesweeper: CMakeFiles/Minesweeper.dir/Minesweeper.cpp.o
 Minesweeper: CMakeFiles/Minesweeper.dir/build.make
-Minesweeper: /usr/local/lib/libsfml-audio.2.5.1.dylib
 Minesweeper: /usr/local/lib/libsfml-graphics.2.5.1.dylib
-Minesweeper: /usr/local/lib/libsfml-network.2.5.1.dylib
+Minesweeper: /usr/local/lib/libsfml-audio.2.5.1.dylib
 Minesweeper: /usr/local/lib/libsfml-window.2.5.1.dylib
+Minesweeper: /usr/local/lib/libsfml-network.2.5.1.dylib
 Minesweeper: /usr/local/lib/libsfml-system.2.5.1.dylib
 Minesweeper: CMakeFiles/Minesweeper.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ray/CLionProjects/Minesweeper/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Minesweeper"

@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
 #include <iostream>
 #include <time.h>
+#include <string>
 #include <queue>
 #include <utility>
 #include <vector>
@@ -13,7 +15,7 @@
 int Minesweeper::gameWidth = 20;
 int Minesweeper::gameHeight = 20;
 
-void Minesweeper::setUpBlankBoard(std::vector<std::vector<int>> &gg,std::vector<std::vector<int>> &ig,std::vector<std::vector<int>> &v){
+void Minesweeper::setUpBlankBoard(std::vector<std::vector<int> > &gg,std::vector<std::vector<int> > &ig,std::vector<std::vector<int> > &v){
     for(int i = 0; i <= Minesweeper::gameWidth+1; i++){
         for(int j = 0; j<= Minesweeper::gameHeight+1; j++){
             v[i][j] = false;    //mark all grid coord not visited
@@ -30,7 +32,7 @@ void Minesweeper::setUpBlankBoard(std::vector<std::vector<int>> &gg,std::vector<
     }
 }
 
-void Minesweeper::setUpGameGrid(std::vector<std::vector<int>> &gameGrid, int clickedMX, int clickedMY){
+void Minesweeper::setUpGameGrid(std::vector<std::vector<int> > &gameGrid, int clickedMX, int clickedMY){
     for (int i = 1; i <= Minesweeper::gameWidth; i++) { //create random board at the first click
         for (int j = 1; j <= Minesweeper::gameHeight; j++) {
             if (rand() % 5 == 0) {
@@ -85,11 +87,11 @@ void Minesweeper::setUpGameGrid(std::vector<std::vector<int>> &gameGrid, int cli
     }
 }
 
-void Minesweeper::checkZero(std::vector<std::vector<int>> &gameGrid,std::vector<std::vector<int>> &imageGrid,std::vector<std::vector<int>> &visited, int clickedMX, int clickedMY){
+void Minesweeper::checkZero(std::vector<std::vector<int> > &gameGrid,std::vector<std::vector<int> > &imageGrid,std::vector<std::vector<int> > &visited, int clickedMX, int clickedMY){
     //if user clicks on 0, scan around to open up more spaces. If other spaces are zero, repeat on that space. If other spaces are bombs, don't do anything. Else, reveal.
     imageGrid[clickedMX][clickedMY] = 0;
     visited[clickedMX][clickedMY] = true;
-    std::queue<std::pair<int, int>> myQ; //queue of all spaces to check
+    std::queue<std::pair<int, int> > myQ; //queue of all spaces to check
     myQ.push(std::make_pair(clickedMX, clickedMY));
     while (!myQ.empty()) {
         int x = myQ.front().first;
@@ -197,9 +199,9 @@ void Minesweeper::play(sf::RenderWindow& window){
     texture.loadFromFile("images/tiles.jpg");
     sf::Sprite sprite(texture);
 
-    std::vector<std::vector<int>> gameGrid(Minesweeper::gameWidth+2); //game
-    std::vector<std::vector<int>> imageGrid(Minesweeper::gameWidth+2); //visual
-    std::vector<std::vector<int>> visited(Minesweeper::gameWidth+2); //used when user clicks on 0
+    std::vector<std::vector<int> > gameGrid(Minesweeper::gameWidth+2); //game
+    std::vector<std::vector<int> > imageGrid(Minesweeper::gameWidth+2); //visual
+    std::vector<std::vector<int> > visited(Minesweeper::gameWidth+2); //used when user clicks on 0
     for (int i = 0; i < Minesweeper::gameWidth+2; i++) {
         gameGrid[i].resize(Minesweeper::gameHeight+2);
         imageGrid[i].resize(Minesweeper::gameHeight+2);
@@ -223,7 +225,8 @@ void Minesweeper::play(sf::RenderWindow& window){
         sf::Event event;
         while (window.pollEvent(event)){
             if (event.type == sf::Event::Closed){
-                window.close();
+                Game::_gameState = Game::Exiting;
+                return;
             }
             if(event.type == sf::Event::MouseButtonPressed){
                 if (event.key.code == sf::Mouse::Left){  // on left mouse click, change visual grid to match game grid, "uncover" the square

@@ -1,8 +1,16 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
+#include <iostream>
+#include <time.h>
+#include <string>
+#include <queue>
+#include <utility>
+#include <vector>
+#include <cmath>
 #include "game.h"
-#include "mainMenu.h"
 #include "Minesweeper.h"
+#include "mainMenu.h"
 
 int Game::windowWidth = 700;
 int Game::windowHeight = 1000;
@@ -59,6 +67,10 @@ void Game::GameLoop()
             }
             case Game::ShowingMenu:
             {
+                if(event.type == sf::Event::Closed)
+                {
+                    _gameState = Game::Exiting;
+                }
                 MainMenu mainMenu;
                 MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
                 switch(result)
@@ -85,9 +97,17 @@ void Game::GameLoop()
                 }
                 Minesweeper game;
                 game.play(_mainWindow);
-                if(_gameState == Game::Playing){
-                    _gameState == Game::Exiting;
+                if(_gameState == Game::Playing){    //if window was closed before gamestate changed, go to exit
+                    _gameState = Game::Exiting;
                 }
+                break;
+            }
+            case Game::Exiting:
+            {
+                break;
+            }
+            case Game::Uninitialized:
+            {
                 break;
             }
         }
