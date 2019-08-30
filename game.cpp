@@ -59,7 +59,11 @@ void Game::GameLoop()
             case Game::ShowingTitle: //show title screen, upon click will move to main menu screen
             {
                 ShowTitleScreen();
-                if(event.type == sf::Event::Closed || event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed )
+                if(event.type == sf::Event::Closed)
+                {
+                    _gameState = Game::Exiting;
+                }
+                if(event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed )
                 {
                     _gameState = Game::ShowingMenu;
                 }
@@ -67,12 +71,12 @@ void Game::GameLoop()
             }
             case Game::ShowingMenu:
             {
+                MainMenu mainMenu;
+                MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
                 if(event.type == sf::Event::Closed)
                 {
                     _gameState = Game::Exiting;
                 }
-                MainMenu mainMenu;
-                MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
                 switch(result)
                 {
                     case MainMenu::Exit: {

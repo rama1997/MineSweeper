@@ -62,11 +62,12 @@ MainMenu::MenuResult  MainMenu::GetMenuResponse(sf::RenderWindow& window)
         {
             return HandleClick(event.mouseButton.x,event.mouseButton.y);
         }
-        if(event.type == sf::Event::Closed)
+        else if(event.type == sf::Event::Closed)
         {
             return Exit;
         }
     }
+    return Nothing;
 }
 
 MainMenu::MenuResult MainMenu::HandleClick(int x, int y)

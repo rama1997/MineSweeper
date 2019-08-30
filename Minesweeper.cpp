@@ -229,7 +229,7 @@ void Minesweeper::play(sf::RenderWindow& window){
                 return;
             }
             if(event.type == sf::Event::MouseButtonPressed){
-                if (event.key.code == sf::Mouse::Left){  // on left mouse click, change visual grid to match game grid, "uncover" the square
+                if (event.mouseButton.button == sf::Mouse::Left){  // on left mouse click, change visual grid to match game grid, "uncover" the square
                     if(mouseX <= Minesweeper::gameWidth && mouseY <= Minesweeper::gameHeight) { //map does not uncover unless user clicks within map screen
                         imageGrid[mouseX][mouseY] = gameGrid[mouseX][mouseY];
                         clickedMX = mouseX;     // new variables for clicked mouse pos
@@ -265,7 +265,7 @@ void Minesweeper::play(sf::RenderWindow& window){
                         timer.setString("0");
                     }
                 }
-                else if (event.key.code == sf::Mouse::Right){ //on right mouse click, insert flag
+                else if (event.mouseButton.button == sf::Mouse::Right){ //on right mouse click, insert flag
                     if(imageGrid[mouseX][mouseY] == 10){
                         imageGrid[mouseX][mouseY] = 11;
                     }

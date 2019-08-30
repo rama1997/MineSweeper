@@ -13,23 +13,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e4c22b76-dbb5-4eda-93b9-35b9d53e62e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minesweeper.h" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/Minesweeper.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/Minesweeper.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/game.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/game.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/mainMenu.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Minesweeper.dir/mainMenu.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Minesweeper" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Minesweeper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.o" beforeDir="false" afterPath="$PROJECT_DIR$/game.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainMenu.o" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-app" beforeDir="false" afterPath="$PROJECT_DIR$/sfml-app" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="461">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -53,20 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="82" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Minesweeper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="210" column="68" lean-forward="true" selection-start-line="210" selection-start-column="68" selection-end-line="210" selection-end-column="68" />
+            <state relative-caret-position="-215">
+              <caret line="272" column="55" lean-forward="true" selection-start-line="272" selection-start-column="55" selection-end-line="272" selection-end-column="55" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#298#1135#0" />
@@ -98,10 +85,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="271">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#350#829#0" />
+                <element signature="e#831#945#0" />
+                <element signature="e#947#2499#0" />
+                <element signature="e#2501#2712#0" />
               </folding>
             </state>
           </provider>
@@ -110,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainMenu.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
+            <state relative-caret-position="-1">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -122,8 +113,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainMenu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#141#1080#0" />
+                <element signature="e#1082#1465#0" />
+                <element signature="e#1467#1957#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,11 +145,11 @@
         <option value="$PROJECT_DIR$/Game.h" />
         <option value="$PROJECT_DIR$/Game.cpp" />
         <option value="$PROJECT_DIR$/mainMenu.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/game.h" />
         <option value="$PROJECT_DIR$/Minesweeper.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/game.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/mainMenu.cpp" />
         <option value="$PROJECT_DIR$/Minesweeper.cpp" />
       </list>
@@ -252,12 +249,12 @@
       <workItem from="1566890982586" duration="36000" />
       <workItem from="1566891220154" duration="9000" />
       <workItem from="1566968372814" duration="9326000" />
-      <workItem from="1566978715021" duration="10474000" />
+      <workItem from="1566978715021" duration="13438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66700000" />
+    <option name="totallyTimeSpent" value="69664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,8 +267,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23247497" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23247497" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -283,7 +281,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49785408" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3299363" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.3299363" />
@@ -328,6 +326,17 @@
       </list>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/game.cpp</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Minesweeper.cbp">
       <provider selected="true" editor-type-id="text-editor">
@@ -347,13 +356,6 @@
     <entry file="file://$PROJECT_DIR$/images/mainMenu.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Minesweeper.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -361,12 +363,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainMenu.h">
+    <entry file="file://$PROJECT_DIR$/main.o">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="271">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#350#829#0" />
+            <element signature="e#831#945#0" />
+            <element signature="e#947#2499#0" />
+            <element signature="e#2501#2712#0" />
           </folding>
         </state>
       </provider>
@@ -378,10 +387,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.cpp">
+    <entry file="file://$PROJECT_DIR$/Minesweeper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="120">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainMenu.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -390,18 +406,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainMenu.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="270">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#141#1080#0" />
+            <element signature="e#1082#1465#0" />
+            <element signature="e#1467#1957#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.o">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="461">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -410,8 +429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Minesweeper.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="210" column="68" lean-forward="true" selection-start-line="210" selection-start-column="68" selection-end-line="210" selection-end-column="68" />
+        <state relative-caret-position="-215">
+          <caret line="272" column="55" lean-forward="true" selection-start-line="272" selection-start-column="55" selection-end-line="272" selection-end-column="55" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#298#1135#0" />
