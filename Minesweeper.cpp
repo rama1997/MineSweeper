@@ -11,6 +11,7 @@
 #include "game.h"
 #include "Minesweeper.h"
 #include "mainMenu.h"
+#include "socket.h"
 
 int Minesweeper::gameWidth = 20;
 int Minesweeper::gameHeight = 20;
@@ -33,6 +34,7 @@ void Minesweeper::setUpBlankBoard(std::vector<std::vector<int> > &gg,std::vector
 }
 
 void Minesweeper::setUpGameGrid(std::vector<std::vector<int> > &gameGrid, int clickedMX, int clickedMY){
+    bool send = true;
     for (int i = 1; i <= Minesweeper::gameWidth; i++) { //create random board at the first click
         for (int j = 1; j <= Minesweeper::gameHeight; j++) {
             if (rand() % 5 == 0) {
@@ -83,6 +85,13 @@ void Minesweeper::setUpGameGrid(std::vector<std::vector<int> > &gameGrid, int cl
                 n++;
             }
             gameGrid[i][j] = n;
+        }
+    }
+    for (int i = 1; i <= Minesweeper::gameWidth; i++) {     //loop the whole gamegrid and stream into packet
+        for (int j = 1; j <= Minesweeper::gameHeight; j++) {
+            if(Socket::connected == true){
+                Socket::packet << gameGrid[i][j];
+            }
         }
     }
 }
@@ -210,9 +219,29 @@ void Minesweeper::play(sf::RenderWindow& window){
 
     setUpBlankBoard(gameGrid,imageGrid,visited);    //set up blank board at the start of program
 
+//    if(Socket::connectionType == 's' && Socket::connected == true){     //if server, send gameGrid over to client
+//        for (int i=1; i<=Minesweeper::gameWidth; i++) {
+//            for (int j = 1; j <= Minesweeper::gameHeight; j++) {
+//                Socket::packet << gameGrid[i][j];
+//                Socket::socket.send(Socket::packet);
+//            }
+//        }
+//    }
+//    else if(Socket::connectionType == 'c' && Socket::connected == true){  //if client, receive gameGrid from server
+//        for (int i=1; i<=Minesweeper::gameWidth; i++) {
+//            for (int j = 1; j <= Minesweeper::gameHeight; j++) {
+//                int input;
+//                Socket::socket.receive(Socket::packet);
+//                Socket::packet >> input;
+//                gameGrid[i][j] = input;
+//            }
+//        }
+//    }
+
     bool gameLost = false;
     bool gameWon = false;
     bool firstClick = true;
+    bool socketFirstClick = true;
 
     while (window.isOpen())
     {
@@ -235,9 +264,25 @@ void Minesweeper::play(sf::RenderWindow& window){
                         clickedMX = mouseX;     // new variables for clicked mouse pos
                         clickedMY = mouseY;
                         if (firstClick == true) { //board is built AFTER first click so that first click is never a bomb and always 0
-                            clock.restart();
-                            setUpGameGrid(gameGrid, clickedMX, clickedMY);
+                            Socket::socket.receive(Socket::packet);
+                            Socket::packet >> socketFirstClick; //if packet has something, that means the other player has clicked first
+                            if(socketFirstClick == true){
+                                Socket::packet << false;
+                                clock.restart();
+                                setUpGameGrid(gameGrid, clickedMX, clickedMY);
+                                Socket::socket.send(Socket::packet);
+                            }
+                            else{
+                                int input;
+                                for (int i=1; i<=Minesweeper::gameWidth; i++) {
+                                    for (int j = 1; j <= Minesweeper::gameHeight; j++) {
+                                        Socket::packet >> input;
+                                        gameGrid[i][j] = input;
+                                    }
+                                }
+                            }
                             firstClick = false;
+                            Socket::packet.clear();
                         }
                         if (gameGrid[clickedMX][clickedMY] == 0 && visited[clickedMX][clickedMY] == false) {
                             //if user clicks on 0, scan around to open up more spaces. If other spaces are zero, repeat on that space. If other spaces are bombs, don't do anything. Else, reveal.
@@ -260,9 +305,11 @@ void Minesweeper::play(sf::RenderWindow& window){
                         gameLost = false;
                         gameWon = false;
                         firstClick = true;
+                        socketFirstClick = true;
                         newTime = false;
                         clock.restart();
                         timer.setString("0");
+                        Socket::packet.clear();
                     }
                 }
                 else if (event.mouseButton.button == sf::Mouse::Right){ //on right mouse click, insert flag

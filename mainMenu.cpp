@@ -11,6 +11,7 @@
 #include "game.h"
 #include "Minesweeper.h"
 #include "mainMenu.h"
+#include "socket.h"
 
 MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window)
 {

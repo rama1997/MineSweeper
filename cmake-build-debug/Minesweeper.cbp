@@ -101,6 +101,12 @@
 		<Unit filename="/Users/ray/CLionProjects/Minesweeper/mainMenu.h">
 			<Option target="Minesweeper"/>
 		</Unit>
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/socket.cpp">
+			<Option target="Minesweeper"/>
+		</Unit>
+		<Unit filename="/Users/ray/CLionProjects/Minesweeper/socket.h">
+			<Option target="Minesweeper"/>
+		</Unit>
 		<Unit filename="/Users/ray/CLionProjects/Minesweeper/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

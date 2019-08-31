@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <list>
-
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
 #ifndef MINESWEEPER_MAINMENU_H
 #define MINESWEEPER_MAINMENU_H
 

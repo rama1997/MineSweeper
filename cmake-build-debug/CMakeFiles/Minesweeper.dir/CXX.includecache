@@ -33,19 +33,43 @@ Minesweeper.h
 /Users/ray/CLionProjects/Minesweeper/Minesweeper.h
 mainMenu.h
 /Users/ray/CLionProjects/Minesweeper/mainMenu.h
+socket.h
+/Users/ray/CLionProjects/Minesweeper/socket.h
 
 /Users/ray/CLionProjects/Minesweeper/Minesweeper.h
 SFML/Graphics.hpp
 -
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
 
 /Users/ray/CLionProjects/Minesweeper/game.h
 SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
 -
 
 /Users/ray/CLionProjects/Minesweeper/mainMenu.h
 SFML/Graphics.hpp
 -
 list
+-
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
+
+/Users/ray/CLionProjects/Minesweeper/socket.h
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
 -
 
 /usr/local/include/SFML/Audio.hpp

@@ -11,6 +11,7 @@
 #include "game.h"
 #include "Minesweeper.h"
 #include "mainMenu.h"
+#include "socket.h"
 
 int Game::windowWidth = 700;
 int Game::windowHeight = 1000;
@@ -59,7 +60,7 @@ void Game::GameLoop()
             case Game::ShowingTitle: //show title screen, upon click will move to main menu screen
             {
                 ShowTitleScreen();
-                if(event.type == sf::Event::Closed)
+                if(event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
                 {
                     _gameState = Game::Exiting;
                 }
@@ -73,7 +74,7 @@ void Game::GameLoop()
             {
                 MainMenu mainMenu;
                 MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
-                if(event.type == sf::Event::Closed)
+                if(event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
                 {
                     _gameState = Game::Exiting;
                 }
@@ -95,7 +96,7 @@ void Game::GameLoop()
             }
             case Game::Playing:
             {
-                if(event.type == sf::Event::Closed)
+                if(event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
                 {
                     _gameState = Game::Exiting;
                 }
