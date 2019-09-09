@@ -24,17 +24,17 @@ bool Socket::firstClick = true;
 
 void Socket::start(){
     std::string text = "Connected to: ";
-    std::cout << "Enter (s) for server, Enter (c) for client" << std::endl;
+    std::cout << "Enter (h) for host, Enter (j) for join" << std::endl;
     std::cin >> connectionType;
 
-    if(connectionType == 's'){  //server
+    if(connectionType == 'h'){  //server
         sf::TcpListener listener;   //server listener
         listener.listen(4000);
         connected = true;
         listener.accept(socket);
         text += "Server";
     }
-    else if(connectionType == 'c'){ //client
+    else if(connectionType == 'j'){ //client
         if(socket.connect(ip, 4000, sf::seconds(10)) == sf::Socket::Done){
             connected = true;
             text += "Client";

@@ -219,29 +219,12 @@ void Minesweeper::play(sf::RenderWindow& window){
 
     setUpBlankBoard(gameGrid,imageGrid,visited);    //set up blank board at the start of program
 
-//    if(Socket::connectionType == 's' && Socket::connected == true){     //if server, send gameGrid over to client
-//        for (int i=1; i<=Minesweeper::gameWidth; i++) {
-//            for (int j = 1; j <= Minesweeper::gameHeight; j++) {
-//                Socket::packet << gameGrid[i][j];
-//                Socket::socket.send(Socket::packet);
-//            }
-//        }
-//    }
-//    else if(Socket::connectionType == 'c' && Socket::connected == true){  //if client, receive gameGrid from server
-//        for (int i=1; i<=Minesweeper::gameWidth; i++) {
-//            for (int j = 1; j <= Minesweeper::gameHeight; j++) {
-//                int input;
-//                Socket::socket.receive(Socket::packet);
-//                Socket::packet >> input;
-//                gameGrid[i][j] = input;
-//            }
-//        }
-//    }
-
     bool gameLost = false;
     bool gameWon = false;
     bool firstClick = true;
     bool socketFirstClick = true;
+    bool socketUploadImage = true;
+    bool socketClickOccured = false;
 
     while (window.isOpen())
     {
@@ -299,13 +282,14 @@ void Minesweeper::play(sf::RenderWindow& window){
                         }
                     }
                     else if(mouseX*Game::imageSize >= playButtonPosition.x && mouseY*Game::imageSize >= playButtonPosition.y && mouseX*Game::imageSize <= playButtonPosition.x + playButtonBounds.width && mouseY*Game::imageSize <= playButtonPosition.y + playButtonBounds.height){
-                        //if reset button is clicked
+                        //if reset button is clicked, reset everything to base value
                         setUpBlankBoard(gameGrid,imageGrid,visited);
                         text.setString("");
                         gameLost = false;
                         gameWon = false;
                         firstClick = true;
                         socketFirstClick = true;
+                        socketUploadImage = true;
                         newTime = false;
                         clock.restart();
                         timer.setString("0");
@@ -323,6 +307,7 @@ void Minesweeper::play(sf::RenderWindow& window){
                 if(imageGrid[mouseX][mouseY] == 9){ //if user clicks on a bomb, game ends
                     gameLost = true;
                 }
+                socketClickOccured = true;
             }
             if(event.type == sf::Event::KeyPressed){
                 if(event.key.code == sf::Keyboard::Escape){
@@ -332,7 +317,36 @@ void Minesweeper::play(sf::RenderWindow& window){
             }
         }
 
+        Socket::packet.clear();
+        Socket::socket.receive(Socket::packet);
+        Socket::packet >> socketUploadImage;
+        if(socketClickOccured == true){         //exchange imagegrid data section
+            Socket::packet << false;
+            for (int i=1; i<=Minesweeper::gameWidth; i++) {
+                for (int j = 1; j <= Minesweeper::gameHeight; j++) {
+                    Socket::packet << imageGrid[i][j];
+                }
+            }
+            Socket::socket.send(Socket::packet);
+            Socket::packet.clear();
+            socketUploadImage = true;
+            socketClickOccured = false;
+        }
+        else if(socketUploadImage == false){
+            int input;
+            for (int i=1; i<=Minesweeper::gameWidth; i++) {
+                for (int j = 1; j <= Minesweeper::gameHeight; j++) {
+                    Socket::packet >> input;
+                    imageGrid[i][j] = input;
+                }
+            }
+            Socket::packet.clear();
+            socketUploadImage = true;
+            socketClickOccured = false;
+        }
+
         window.clear();     //clear window after each click
+
         for (int i=1; i<=Minesweeper::gameWidth; i++) {
             for (int j = 1; j <= Minesweeper::gameHeight; j++) {
                 if (gameLost == true) {    //if game lost, uncover whole map
